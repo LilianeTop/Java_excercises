@@ -44,11 +44,13 @@ public class ClassAccess {
          * The getConstructors() method should be called on the class definition to obtain class constructors,
          * and then getParameterTypes() should be called to get a constructor's parameters:
          */
+
+        Class[] paramTypes = new Class[0];
         try {
             Class clazz = Class.forName(ClassAccess.class.getName());
             Constructor[] constructors = clazz.getConstructors();
             for (Constructor constructor : constructors) {
-                Class[] paramTypes = constructor.getParameterTypes();
+                paramTypes = constructor.getParameterTypes();
                 for (Class paramType : paramTypes) {
                     System.out.print(paramType.getName() + " ");//displays the 3 parameters of the constructor
                 }
@@ -58,15 +60,15 @@ public class ClassAccess {
             try {
                 clazz = Class.forName(ClassAccess.class.getName());
                 //java.lang.String java.lang.String int
-                Class[] params = {String.class, String.class, int.class};
-                access = (ClassAccess) clazz.getConstructor(params).newInstance("default1", "default2", 4);
+                //Class[] params = {String.class, String.class, int.class};
+                access = (ClassAccess) clazz.getConstructor(paramTypes).newInstance("default1", "default2", 4);
             } catch (ClassNotFoundException | NoSuchMethodException | InstantiationException | IllegalAccessException | InvocationTargetException e) {
                 e.printStackTrace();
             }
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-        //System.out.println(access);//output: Reflection.ClassAccess@f6f4d33
+        System.out.println(access);//output: Reflection.ClassAccess@f6f4d33
 
     }
 }
