@@ -1,4 +1,4 @@
-package DesignPatterns;
+package DesignPatterns.StrategyPattern;
 /**
  * The Strategy Pattern defines a family of algorithms(behaviors)
  * encapsulates each one, and make them interchangeable.
@@ -21,6 +21,7 @@ public class StrategyExercise {
         //here we change the flybehavior at runtime by using the setter
         wildDuck.setFlyBehavior(new FlyRocketPowered());
         wildDuck.performFly();
+        //Implement the QuackBehavior interface
         DuckCallerDevice dc = new DuckCallerDevice();
         dc.quack();
 

@@ -1,4 +1,4 @@
-package DesignPatterns;
+package DesignPatterns.StrategyPattern;
 
 public class MallardDuck extends Duck{
     //when a new Mallard Duck is created the quackBehaviour will be set to Quack

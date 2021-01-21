@@ -1,4 +1,4 @@
-package DesignPatterns;
+package DesignPatterns.StrategyPattern;
 
 public abstract class Duck {
     FlyBehavior flyBehavior;
