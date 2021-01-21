@@ -22,7 +22,11 @@ public class StrategyExercise {
         wildDuck.setFlyBehavior(new FlyRocketPowered());
         wildDuck.performFly();
         DuckCallerDevice dc = new DuckCallerDevice();
-        dc.quackBehavior.quack();
+        dc.quack();
+
+        // now I can easily change the quacking at runtime form mute to squeak
+        dc.setQuackBehavior(new Squeak());
+        dc.quack();
 
 
 
